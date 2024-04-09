@@ -1,0 +1,366 @@
+.CodeEditorPage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #1d1c1c;
+  padding: 0 45px; 
+}
+
+.left-section {
+  margin-left: 133px;
+  padding-left: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-right:550px;
+}
+
+.logo {
+  width: 30px; 
+  height: 30px; 
+}
+
+.title {
+  color: white;
+  margin-left: 10px; /* Adjust spacing between logo and title */
+  font-size: 20px;
+}
+
+.center-section {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.run-button button {
+  padding: 5px 20px; 
+  background-color: #AAD2BA; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  height: 40px;
+}
+.run-button :hover{
+  background-color: #4D9369;
+}
+
+
+.right-section {
+  display: flex;
+  align-items: center;
+  
+}
+
+.nav-links {
+  display: flex;
+  margin-left: 600px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-right: 10px; /* Adjust spacing between links */
+}
+
+.nav-links a:last-child {
+  margin-right: 0; /* Remove margin from the last link */
+}
+.nav-links a:hover {
+  background-color: #4D9369; 
+}
+
+
+.human-logo {
+  margin-left: 20px; /* Adjust spacing between elements */
+}
+
+.human-logo img {
+  width: 30px; 
+  height: 35px; 
+}
+
+
+
+
+.content {
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+}
+
+.pane1,
+.pane2,
+.pane3 {
+  height: calc(100% - 21px); /* Adjusted height to accommodate the top navigation bar */
+}
+
+.SplitPane {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #484747;
+}
+
+.Resizer.vertical {
+  width: 10px;
+  background-color: black;
+  cursor: col-resize;
+}
+
+.Resizer.vertical:hover {
+  background-color: darkgray;
+}
+
+/* Navigation menu styles */
+.pane3 ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.pane3 li {
+  float: left;
+}
+
+.pane3 li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.pane3 li a:hover:not(.active) {
+  background-color:#4D9369;
+}
+
+
+
+/* Ace Editor styles */
+.ace-editor {
+  width: 100%; 
+  height: 97%;
+  background-color: #1d1c1c; 
+}
+
+.ace-editor .ace_content {
+  font-family: monospace; 
+  font-size: 18px; 
+  background-color: #020121;
+}
+
+.ace-editor .ace_gutter {
+  background-color: #efe3e3; 
+  color: #efe3e3; 
+}
+
+.ace-editor .ace_marker-layer .ace_active-line {
+  background-color: #ebd7d7; 
+}
+
+.ace-editor .ace_marker-layer .ace_selection {
+  background-color: #fff3f3; 
+}
+
+/* Customize Ace Editor theme */
+.ace-monokai .ace_gutter {
+  background-color: #333; 
+  color: #d0d0d0; 
+}
+
+.ace-monokai .ace_marker-layer .ace_active-line {
+  background-color: #020121; 
+}
+
+.ace-monokai .ace_marker-layer .ace_selection {
+  background-color: #dbcdcd; 
+}
+
+.language-selector {
+  margin: 0px 0;
+  height: 30px; 
+  padding-left: 0px;
+  background-color: #020121;
+}
+
+
+#descriptionTextarea {
+  width: 80%;
+  padding-left: 40px;
+  height: 80%;
+  overflow: auto;
+  background-color: transparent; /* Set background to transparent */
+  color: white; /* Set text color to white */
+  border: 0px solid;
+  border-color: transparent;
+  scrollbar-width: thin;
+  margin-top: 1%;
+  resize: none;
+  scrollbar-color: #AAD2BA transparent; /* for Firefox */
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 15px;
+  text-align: left;
+  line-height: 30px;
+  
+}
+
+#descriptionTextarea:: onfocus {
+  outline: none;
+  border-color: transparent;
+}
+
+#descriptionTextarea::-webkit-scrollbar {
+  width: 0.5px; /* Set the width of the scrollbar */
+}
+
+#descriptionTextarea::-webkit-scrollbar-thumb {
+  background-color: white; /* Color of the scrollbar thumb */
+}
+
+#descriptionTextarea::-webkit-scrollbar-track {
+  background-color: transparent; /* Color of the scrollbar track */
+}
+
+.leetcode-fetch {
+  position: relative;
+  width: 80%;
+  margin-top: 5px;
+  margin-top: 
+}
+
+.slug-input-container {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.slug-input-container input {
+  padding: 50px;
+
+  height: 40px;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 190px; /* Adjust the width as needed */
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.fetch-button {
+  text-align: center;
+  position: absolute;
+  height: 40px;
+  top: 0;
+  right: -10px;
+  flex: display;
+  flex-direction: row;
+  width: 10%;
+  background-color: #AAD2BA;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: -1px;
+  text-align: center;
+  
+}
+
+.fetch-button:hover {
+  background-color: #4D9369;
+}
+
+.leetcode-fetch {
+  padding-left: 10%;
+  color: darkgrey;
+}
+
+.chatroom-section {
+  display: grid;
+  grid-template-rows: 1fr auto; /* Two rows: 1st row expands to fill remaining space, 2nd row is auto-sized */
+  height: 100%; 
+  overflow-x: hidden; 
+}
+
+.chatroom-messages {
+  grid-row: 1; /* Messages occupy the 1st row */
+  overflow-y: auto; /* Enable vertical scrolling for messages */
+  padding: 10px; /* Adjust padding as needed */
+  display: flex;
+  flex-direction: column-reverse; /* Reverse column direction to display messages from top to bottom */
+  align-items: flex-end; /* Align messages to the right */
+  /* max-height: calc(100% - 80px); Set maximum height to allow space for chatroom-input */
+  height: 77vh; /* Set maximum height to allow space for chatroom-input */
+  overflow-x: hidden; /* Hide overflow on the x-axis */
+}
+
+/* Styling for individual chat messages */
+.message {
+  background-color: #AAD2BA;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 8px;
+  align-self: flex-end; /* Align messages to the right */
+}
+
+/* Styling for chatroom input and send button */
+.chatroom-input {
+  grid-row: 2; /* Input area occupies the 2nd row */
+  display: flex;
+  align-items: center;
+  padding:15px;
+  height:5vh;
+  border-top: 1px solid #ccc; /* Optional: Add border above input area */
+}
+
+/* Input text area styling */
+.chatroom-input input[type="text"] {
+  width: calc(80% - 10px); /* Set the width of the input area */
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 8px; /* Space between input and button */
+  
+}
+
+/* Send button styling */
+.chatroom-input button {
+  width: calc(20% - 10px); /* Set the width of the button */
+  padding: 8px 16px;
+  background-color: #AAD2BA;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  
+}
+
+.chatroom-input button:hover {
+  background-color: #4D9369;
+}
+
+
+
+
+
+
+
+
+
