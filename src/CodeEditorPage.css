@@ -9,12 +9,14 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background-color: #1d1c1c;
+  height: 5%;
+  background-color: black;
   padding: 0 45px; 
+  
 }
 
 .left-section {
-  margin-left: 133px;
+  margin-left: 100px;
   padding-left: 0px;
   display: flex;
   align-items: center;
@@ -45,16 +47,18 @@
 
 .run-button button {
   padding: 5px 20px; 
-  background-color: #AAD2BA; 
+  background-color: #130065;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-bottom: 10px;
   height: 40px;
+  font-size: 18px;
 }
 .run-button :hover{
-  background-color: #4D9369;
+  color: #130065;
+  background-color: #36c4f3; 
 }
 
 
@@ -76,11 +80,11 @@
 }
 
 .nav-links a:last-child {
-  margin-right: 0; /* Remove margin from the last link */
+  margin-right: 85px; /* Remove margin from the last link */
 }
-.nav-links a:hover {
+/* .nav-links a:hover {
   background-color: #4D9369; 
-}
+} */
 
 
 .human-logo {
@@ -111,7 +115,8 @@
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: #484747;
+  background-color: #01001d;
+  
 }
 
 .Resizer.vertical {
@@ -121,7 +126,7 @@
 }
 
 .Resizer.vertical:hover {
-  background-color: darkgray;
+  background-color: #001247;
 }
 
 /* Navigation menu styles */
@@ -130,7 +135,8 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #0a0134;
+  
 }
 
 .pane3 li {
@@ -139,14 +145,18 @@
 
 .pane3 li a {
   display: block;
-  color: white;
+  color: rgb(224, 224, 224);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
 .pane3 li a:hover:not(.active) {
-  background-color:#4D9369;
+  background-color:#130065;
+}
+
+.pane3 li a :active {
+  background-color:#130065;
 }
 
 
@@ -161,7 +171,8 @@
 .ace-editor .ace_content {
   font-family: monospace; 
   font-size: 18px; 
-  background-color: #020121;
+  color: yellow;
+  background-color: #01001d;
 }
 
 .ace-editor .ace_gutter {
@@ -174,30 +185,49 @@
 }
 
 .ace-editor .ace_marker-layer .ace_selection {
-  background-color: #fff3f3; 
+  background-color: #130065; 
 }
 
 /* Customize Ace Editor theme */
 .ace-monokai .ace_gutter {
-  background-color: #333; 
+  background-color: #0a0134; 
   color: #d0d0d0; 
 }
 
 .ace-monokai .ace_marker-layer .ace_active-line {
-  background-color: #020121; 
+  background-color: transparent; 
 }
 
 .ace-monokai .ace_marker-layer .ace_selection {
-  background-color: #dbcdcd; 
+  background-color: #322371; 
 }
 
 .language-selector {
   margin: 0px 0;
   height: 30px; 
-  padding-left: 0px;
-  background-color: #020121;
+  padding-top: 10px;
+  padding-left: 80%;
+  background-color: #01001d;
 }
 
+.language-selector select {
+  width: 80%; 
+  height: 30px; 
+  background-color: transparent;
+  color: rgb(224, 224, 224);
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.language-selector select:focus {
+  outline: none;
+  background-color: #130065;
+}
+
+.language-selector :hover {
+  background-color: #130065;
+}
 
 #descriptionTextarea {
   width: 80%;
@@ -205,21 +235,21 @@
   height: 80%;
   overflow: auto;
   background-color: transparent; /* Set background to transparent */
-  color: white; /* Set text color to white */
+  color: rgb(212, 196, 196); /* Set text color to white */
   border: 0px solid;
   border-color: transparent;
-  scrollbar-width: thin;
   margin-top: 1%;
   resize: none;
-  scrollbar-color: #AAD2BA transparent; /* for Firefox */
   font-family: 'Courier New', Courier, monospace;
   font-size: 15px;
   text-align: left;
   line-height: 30px;
+  scrollbar-width: thin;
+  scrollbar-color: #130065 transparent;
   
 }
 
-#descriptionTextarea:: onfocus {
+#descriptionTextarea:focus {
   outline: none;
   border-color: transparent;
 }
@@ -240,7 +270,7 @@
   position: relative;
   width: 80%;
   margin-top: 5px;
-  margin-top: 
+  font-size: 20px;
 }
 
 .slug-input-container {
@@ -252,7 +282,6 @@
 
 .slug-input-container input {
   padding: 50px;
-
   height: 40px;
   margin-right: 8px;
   border: 1px solid #ccc;
@@ -264,27 +293,18 @@
 }
 
 .fetch-button {
-  text-align: center;
-  position: absolute;
-  height: 40px;
-  top: 0;
-  right: -10px;
-  flex: display;
-  flex-direction: row;
-  width: 10%;
-  background-color: #AAD2BA;
-  color: #fff;
+  padding: 5px 20px;
+  background-color: #130065;
+  color: white;
   border: none;
-  border-radius: 50%;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 14px;
-  margin-top: -1px;
-  text-align: center;
-  
+  font-size: 18px;
 }
 
 .fetch-button:hover {
-  background-color: #4D9369;
+  background-color: #36c4f3;
+  color: #130065;
 }
 
 .leetcode-fetch {
@@ -307,17 +327,20 @@
   flex-direction: column-reverse; /* Reverse column direction to display messages from top to bottom */
   align-items: flex-end; /* Align messages to the right */
   /* max-height: calc(100% - 80px); Set maximum height to allow space for chatroom-input */
-  height: 77vh; /* Set maximum height to allow space for chatroom-input */
+  height: 77.5vh; /* Set maximum height to allow space for chatroom-input */
   overflow-x: hidden; /* Hide overflow on the x-axis */
+  scrollbar-width: thin;
+  scrollbar-color: #130065 transparent;
 }
 
 /* Styling for individual chat messages */
 .message {
-  background-color: #AAD2BA;
+  background-color: #130065;
   border-radius: 8px;
   padding: 8px;
   margin-bottom: 8px;
   align-self: flex-end; /* Align messages to the right */
+  color: rgb(212, 196, 196)
 }
 
 /* Styling for chatroom input and send button */
@@ -334,33 +357,107 @@
 .chatroom-input input[type="text"] {
   width: calc(80% - 10px); /* Set the width of the input area */
   padding: 12px;
+  color: rgb(212, 196, 196);
+  background-color: #130065;
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-right: 8px; /* Space between input and button */
-  
+  margin-top: 4px;
 }
 
 /* Send button styling */
 .chatroom-input button {
-  width: calc(20% - 10px); /* Set the width of the button */
+  width: calc(25% - 10px); /* Set the width of the button */
+  height: 42px;
+  margin-top: -7.1px;
   padding: 8px 16px;
-  background-color: #AAD2BA;
-  color: white;
   border: none;
-  border-radius: 2px;
+  border-radius: 10px;
+  font-size: 18px;
   cursor: pointer;
+  background-color: #130065;
+  color: white;
   
 }
 
 .chatroom-input button:hover {
-  background-color: #4D9369;
+  background-color: #36c4f3;
+  color: #130065;
 }
 
+.ai-button {
+  padding: 5px 20px;
+  width: 90%;
+  margin-left: 6%;
+  margin-top: 10px;
+  background-color: #130065;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  height: 40px;
+  font-size: 18px;
+}
 
+.ai-button:hover {
+  background-color: #36c4f3;
+  color: #130065;
+}
 
+.ai-textarea{
+  height: 700px;
+  width: 90%;
+  background-color: transparent;
+  color: rgb(212, 196, 196);
+  font-size: 16px;
+  padding-left: 5%;
+  outline: none;
+  border-color: transparent;
+  scrollbar-width: thin;
+  scrollbar-color: #130065 transparent;
+}
 
+.ai-textarea:focus {
+  outline: none;
+  border-color: transparent;
+}
 
+.input-textarea{
+  height: 300px;
+  width: 90%;
+  background-color: transparent;
+  color: rgb(255, 156, 247);
+  font-size: 16px;
+  padding-left: 5%;
+  outline: none;
+  border-color: transparent;
+  scrollbar-width: thin;
+  scrollbar-color: #36c4f3 transparent;
+  resize: none; 
+}
 
+.output-textarea{
+  height: 300px;
+  width: 90%;
+  background-color: transparent;
+  color: rgb(255, 156, 247);
+  font-size: 16px;
+  padding-left: 5%;
+  outline: none;
+  border-color: transparent;
+  scrollbar-width: thin;
+  scrollbar-color: #36c4f3 transparent;
+  resize: none; 
+}
 
+.slugInputArea {
+  margin-top: 10px;
+  background-color: transparent;
+  color: rgb(197, 197, 213);
+  outline: none;
+  border-color: rgb(224, 224, 224);
+
+}
 
 

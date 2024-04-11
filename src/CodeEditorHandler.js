@@ -21,13 +21,12 @@ if (isBrowser) {
 }
 
 let stompClient = null;
-export const CodeEditorHandler = ({ updateOutput, updateUserCode }) => {
+export const CodeEditorHandler = ({ updateOutput, updateUserCode, codeInput }) => {
 
   const { roomId } = useParams();
   const { username } = useParams();
   const [code, setCode] = useState('');
   const [selectedLanguage, setSelectedLanguage] = useState('javascript');
-  const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
 
  
@@ -110,7 +109,7 @@ export const CodeEditorHandler = ({ updateOutput, updateUserCode }) => {
     const payload = {
       language_id: getLanguageId(selectedLanguage),
       source_code: code,
-      stdin: input, 
+      stdin: codeInput, 
     };
     try {
       // Make a POST request to Judge0 API to submit the code
@@ -170,8 +169,7 @@ export const CodeEditorHandler = ({ updateOutput, updateUserCode }) => {
     <div className="code-editor-handler ace-editor">
       {/* UI for selecting language */}
       <div className="language-selector">
-        <label>Select Language:</label>
-        <select
+        <select className='language-selector-dropdown'
           value={selectedLanguage}
           onChange={(e) => handleLanguageChange(e.target.value)}
         >
@@ -191,7 +189,7 @@ export const CodeEditorHandler = ({ updateOutput, updateUserCode }) => {
         editorProps={{ $blockScrolling: true }}
         placeholder="Enter your code here..."
         width="100%"
-        height="88%" // Adjust height as needed
+        height="86%" // Adjust height as needed
         setOptions={{
           showPrintMargin: false,
           fontSize: 18,

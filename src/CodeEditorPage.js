@@ -8,7 +8,7 @@ import { over } from 'stompjs';
 import SockJS from 'sockjs-client';
 
 let stompClient = null;
-function NavigationMenu({ output, userCode }) {
+function NavigationMenu({ output, userCode, codeInput, setCodeInput }) {
   const [code, setCode] = useState('');
   const [aioutput, setAIOutput] = useState('');
   const { roomId } = useParams();
@@ -55,6 +55,9 @@ function NavigationMenu({ output, userCode }) {
       setInput('');
   };
 
+  const handleCodeInputChange = (event) => {
+    setCodeInput(event.target.value);
+  };
 
   const handleInputChange = (event) => {
     setInput(event.target.value);
@@ -111,9 +114,8 @@ function NavigationMenu({ output, userCode }) {
           <textarea
             className="input-textarea"
             placeholder="Enter input here..."
-            value={input}
-            onChange={handleInputChange}
-            style = {{ height: '300px', width: '100%',backgroundColor: 'transparent', color: 'white', fontSize: '16px'}}
+            value={codeInput}
+            onChange={handleCodeInputChange}
             ></textarea>
           {/* <button className="executerun-button" onClick={handleRunClick}>Execute</button> */}
           <textarea
@@ -127,15 +129,14 @@ function NavigationMenu({ output, userCode }) {
       )}
       {activeSection === 'askai' && (
         <div className="ai-section">
-          <button 
+          <button className="ai-button"
           onClick={handleAiClick}
-          style = {{ height: '5%', width: '98%'}}>Ask AI</button>
+          >Ask AI</button>
           <textarea
             className="ai-textarea"
             placeholder="Ai help will be displayed here"
             value={aioutput}
             onChange={handleAIChange}
-            style = {{ height: '700px', width: '98%',backgroundColor: 'transparent', color: 'white', fontSize: '16px', paddingLeft: '5%' }}
             ></textarea>
           {/* <button className="executerun-button" onClick={handleRunClick}>Execute</button> */}
           
@@ -174,7 +175,6 @@ function TopNavigationBar() {
       </div>
       <div className="right-section">
         <div className="nav-links">
-          <a href="/">Home</a>
           <a href="/">Logout</a>
         </div>
         <div className="human-logo">
@@ -188,6 +188,7 @@ function TopNavigationBar() {
 function CodeEditorPage() {
   const [output, setOutput] = useState('');
   const [code, setUserCode] = useState('');
+  const [codeInput, setCodeInput] = useState('');
 
   const [problemSlugInput, setProblemSlugInput] = useState('');
   const handleProblemSlugInputChange = (event) => {
@@ -215,6 +216,7 @@ function CodeEditorPage() {
           <div className="pane1">
           <div className="leetcode-fetch">
             <input
+              className="slugInputArea"
               type="text"
               value={problemSlugInput}
               onChange={handleProblemSlugInputChange}
@@ -231,9 +233,9 @@ function CodeEditorPage() {
             ></textarea>     
           </div>
           <SplitPane split="vertical" defaultSize="50%">
-            <CodeEditorHandler output={output}  updateOutput={setOutput} updateUserCode={setUserCode} />
+            <CodeEditorHandler output={output}  updateOutput={setOutput} updateUserCode={setUserCode} codeInput={codeInput} />
             <div className="pane3">
-              <NavigationMenu output={output} userCode={code}/>
+              <NavigationMenu output={output} userCode={code} codeInput={codeInput} setCodeInput={setCodeInput} />
             </div>
           </SplitPane>
         </SplitPane>
